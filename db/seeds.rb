@@ -3,5 +3,23 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+
+require 'faker'
+
+def create_gift()
+  Gift.create(
+    title: Faker::Device,
+    description: Faker::Lorem,
+    user_id: Faker::IDNumber,
+    url: Faker::Placeholdit,
+    price: Faker::Currency,
+    favorited_user_id: Faker::IDNumber
+  )
+puts "Gift was created successfully 🎁!"
+end
+
+51.times do |i|
+  create_gift()
+end
+
 #   Character.create(name: "Luke", movie: movies.first)
